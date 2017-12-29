@@ -1,7 +1,7 @@
 # exceptionalcppstyle
 # Reading Herb Sutter Exceptional C++ Style: 40 New Engineering Puzzles, Programming Problems, and Solutions
 
-## vectors
+## Chapter 1: vectors
 * Remember the difference between size/resize and capacity/reserve.
 * Be const correct. In particular, use const_iterator when you are not modifying the contents of a container.
 * Prefer comparing iterators with !=, not <.
@@ -17,8 +17,9 @@ OutputIterator copy(const Container& c, OutputIterator result) {
  return std::copy(c.begin(), c.end(), result);
 }
 ```
-
-## String formatter:
+## Chapter 2: sprintf
+* Never use sprintf
+## Chapter 3: string formatters:
 * If all you're doing is converting a value to a string (or, for that matter, to anything else!): Prefer using boost::lexical_cast by default.
 * For simple formatting, or where you need wide string support or templatability: Prefer using stringstream or strstream; the code will be more verbose and harder to grasp than it would be with snprintf, but for simple formatting it won't be too bad.
 * For more complex formatting, and where you don't need wide string support or templatability: Prefer using snprintf. Just because it's C doesn't mean it's off limits to C++ programmers!
